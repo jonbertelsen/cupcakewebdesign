@@ -64,57 +64,80 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <h1>Velkommen ombord</h1>
-        <h4>Øens bedste cupcakes. Vælg og bestil her sadfgasdfgasdfsad:</h4>
+    <div class="jumbotron" style="background-color: transparent;">
+        <h1>Kurv</h1>
 
         <form action="/FrontController" method="post">
 
-            <input type="hidden" name="source" value="addtocart"/>
+            <input type="hidden" name="source" value="cart"/>
 
-            <div id="cupcakeselectionbox" class="row">
+            <table class="table table-striped ">
+                <thead>
+                <tr>
+                    <th>Bund</th>
+                    <th>Top</th>
+                    <th>Antal</th>
+                    <th>Pris</th>
+                    <th>I alt</th>
+                    <th>Fjern</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Chocolate</td>
+                    <td>Blueberry</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>
+                        <button type="submit" name="removeorderline" value="1" class="btn btn-danger btn-xs">Fjern</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vanilla</td>
+                    <td>Raspberry</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>
+                        <button type="submit" name="removeorderline" value="2" class="btn btn-danger btn-xs">Fjern</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nutmeg</td>
+                    <td>Strawberry</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>
+                        <button type="submit" name="removeorderline" value="3" class="btn btn-danger btn-xs">Fjern</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pistacio</td>
+                    <td>Crispy</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>40</td>
+                    <td>
+                        <button type="submit" name="removeorderline" value="4" class="btn btn-danger btn-xs">Fjern</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">I alt</td>
+                    <td>56</td>
+                    <td>&nbsp;</td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
 
-                <div class="col-sm-3 dropdown_box">
-                    <select name="bottom" class="form-control">
-                        <option selected disabled>Vælg bund</option>
-                        <option value="1">Chocolate</option>
-                        <option value="2">Vanilla</option>
-                        <option value="3">Nutmeg</option>
-                        <option value="4">Pistacio</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <select name="top" class="form-control">
-                        <option selected disabled>Vælg top</option>
-                        <option value="1">Chocolate</option>
-                        <option value="2">Blueberry</option>
-                        <option value="3">Rasberry</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <select name="number" class="form-control">
-                        <option selected disabled>Vælg antal</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <input type="submit" name="selectcupcake" value="Læg i kurv" class="btn btn-success form-control"/>
-                </div>
-
+        <form action="/FrontController" method="post">
+            <div class="float-right">
+                <input type="hidden" name="source" value="cartcontrol"/>
+                <button type="submit" name="shop" value="shop" class="btn btn-primary">Shop videre</button>
+                <button type="submit" name="pay" value="pay" class="btn btn-success">Betal</button>
             </div>
-
         </form>
 
     </div>

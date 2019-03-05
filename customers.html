@@ -64,57 +64,65 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <h1>Velkommen ombord</h1>
-        <h4>Øens bedste cupcakes. Vælg og bestil her sadfgasdfgasdfsad:</h4>
+    <div class="jumbotron" style="background-color: transparent;">
+
+        <h1>Kunder</h1>
 
         <form action="/FrontController" method="post">
 
-            <input type="hidden" name="source" value="addtocart"/>
+            <input type="hidden" name="source" value="customers"/>
 
-            <div id="cupcakeselectionbox" class="row">
+            <table class="table table-striped ">
+                <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>ID</th>
+                    <th>Saldo</th>
+                    <th>Ordrer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ole@dr.dk</td>
+                    <td>1</td>
+                    <td>125,00</td>
+                    <td>
+                        <button type="submit" name="customerid" value="1" class="btn btn-success btn-xs">Se ordrer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>bent@yahoo.dk</td>
+                    <td>2</td>
+                    <td>200,00</td>
+                    <td>
+                        <button type="submit" name="customerid" value="2" class="btn btn-success btn-xs">Se ordrer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>erna@arto.dk</td>
+                    <td>3</td>
+                    <td>0,00</td>
+                    <td>
+                        <button type="submit" name="customerid" value="3" class="btn btn-success btn-xs">Se ordrer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>tove@jubii.dk</td>
+                    <td>4</td>
+                    <td>75,00</td>
+                    <td>
+                        <button type="submit" name="customerid" value="4" class="btn btn-success btn-xs">Se ordrer</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
 
-                <div class="col-sm-3 dropdown_box">
-                    <select name="bottom" class="form-control">
-                        <option selected disabled>Vælg bund</option>
-                        <option value="1">Chocolate</option>
-                        <option value="2">Vanilla</option>
-                        <option value="3">Nutmeg</option>
-                        <option value="4">Pistacio</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <select name="top" class="form-control">
-                        <option selected disabled>Vælg top</option>
-                        <option value="1">Chocolate</option>
-                        <option value="2">Blueberry</option>
-                        <option value="3">Rasberry</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <select name="number" class="form-control">
-                        <option selected disabled>Vælg antal</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-3 dropdown_box">
-                    <input type="submit" name="selectcupcake" value="Læg i kurv" class="btn btn-success form-control"/>
-                </div>
-
+        <form action="/FrontController" method="post">
+            <div class="float-right">
+                <input type="hidden" name="command" value="customercontrol"/>
+                <button type="submit" value="shop" class="btn btn-primary">Shop videre</button>
             </div>
-
         </form>
 
     </div>
